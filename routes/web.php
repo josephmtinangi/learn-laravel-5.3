@@ -1,5 +1,7 @@
 <?php
 
+use App\Mail\WelcomeToJSoftwares;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,4 +15,8 @@
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/send-mail', function() {
+	Mail::to('josephmtinangi@example.com')->send(new WelcomeToJSoftwares);
 });
