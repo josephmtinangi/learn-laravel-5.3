@@ -1,6 +1,7 @@
 <?php
 
 use App\Mail\WelcomeToJSoftwares;
+use App\Mail\Goodbye;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +20,8 @@ Route::get('/', function () {
 
 Route::get('/send-mail', function() {
 	Mail::to('josephmtinangi@example.com')->send(new WelcomeToJSoftwares);
+});
+
+Route::get('/send-mail/goodbye', function() {
+	Mail::to('josephmtinangi@example.com')->send(new Goodbye);
 });
