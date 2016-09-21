@@ -1,5 +1,10 @@
 <?php
 
+use App\Notifications\SubscriptionCanceled;
+					  
+
+Auth::loginUsingId(1);
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,5 +17,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    
+	Auth::user()->notify(new SubscriptionCanceled);
+    // return view('welcome');
 });
