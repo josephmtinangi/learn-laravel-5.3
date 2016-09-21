@@ -12,5 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+	$users = App\User::take(8)->get();
+
+    return view('welcome', compact('users'));
 });
