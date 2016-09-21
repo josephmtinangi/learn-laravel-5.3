@@ -12,5 +12,6 @@
 */
 
 Route::get('/', function () {
+	// TODO: find a nice text tutorial about this
     return view('welcome');
 });
