@@ -1,5 +1,7 @@
 <?php
 
+use App\Notifications\LessonPublished;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,5 +14,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	$user = App\User::findOrFail(9);
+	$lesson = App\Lesson::findOrFail(2);
+
+	$user->notify(new LessonPublished($lesson));
 });
