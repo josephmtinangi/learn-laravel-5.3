@@ -1,5 +1,7 @@
 <?php
 
+use App\Notifications\PaymentReceived;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,5 +14,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	$user = App\User::find(2);
+    $admin = App\User::find(1);
+
+    $admin->notify(new PaymentReceived($user));
 });
