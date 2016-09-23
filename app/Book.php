@@ -4,6 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+use App\Author;
+use App\Category;
+
 class Book extends Model
 {
 
@@ -16,11 +19,11 @@ class Book extends Model
 
     public function author()
     {
-    	return $this->belongsTo('App\Author::class');
+    	return $this->belongsTo(Author::class);
     }
 
     public function categories()
     {
-    	return $this->belongsToMany('App\Category::class');
+    	return $this->belongsToMany(Category::class);
     }
 }

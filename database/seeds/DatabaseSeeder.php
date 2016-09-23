@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
         // $authors = factory(App\Author::class, 1000)->create();
         // $this->call(BooksTableSeeder::class);
-        $this->call(CategoriesTableSeeder::class);
+        // $this->call(CategoriesTableSeeder::class);
+        $this->call(BookCategoryTableSeeder::class);
     }
 }

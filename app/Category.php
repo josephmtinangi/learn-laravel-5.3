@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+use App\Book;
+
 class Category extends Model
 {
 	protected $fillable = [
@@ -14,6 +16,6 @@ class Category extends Model
 
     public function books()
     {
-    	return $this->belongsToMany('App\Book::class');
+    	return $this->belongsToMany(Book::class);
     }
 }
