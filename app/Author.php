@@ -10,4 +10,9 @@ class Author extends Model
 			'name',
 			'email'
 	];
+
+	public function books()
+	{
+		return $this->hasMany('App\Book:class');
+	}
 }
